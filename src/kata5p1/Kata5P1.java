@@ -37,11 +37,14 @@ public class Kata5P1 {
             if (!mail.contains("@")) {
                 continue;
             }
-            System.out.println(mail);
             
             query = "INSERT INTO MAIL (Mail) VALUES ('" + mail + "')";
             statement.execute(query);
         }
+        
+        rs.close();
+        statement.close();
+        connection.close();
     }
 
 }
